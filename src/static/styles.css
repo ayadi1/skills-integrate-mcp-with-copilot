@@ -57,6 +57,38 @@ section h3 {
   color: #1a237e;
 }
 
+.role-switcher {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.role-switcher label,
+.role-help {
+  color: #444;
+}
+
+.role-help {
+  margin-bottom: 16px;
+}
+
+.activity-actions {
+  margin: 12px 0;
+}
+
+.review-btn,
+.capacity-btn {
+  margin-right: 8px;
+  margin-bottom: 8px;
+  background-color: #546e7a;
+}
+
+.review-btn:hover,
+.capacity-btn:hover {
+  background-color: #455a64;
+}
+
 .activity-card {
   margin-bottom: 15px;
   padding: 15px;
@@ -128,6 +160,27 @@ section h3 {
 .participants-section p {
   color: #777;
   font-style: italic;
+}
+
+.reviews-section {
+  margin-top: 12px;
+  padding-top: 12px;
+  border-top: 1px dotted #ccc;
+}
+
+.reviews-section h5 {
+  margin-bottom: 8px;
+  color: #1a237e;
+}
+
+.reviews-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.reviews-list li {
+  padding: 4px 0;
+  color: #555;
 }
 
 .form-group {
