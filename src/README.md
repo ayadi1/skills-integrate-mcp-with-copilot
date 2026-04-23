@@ -6,6 +6,7 @@ A super simple FastAPI application that allows students to view and sign up for 
 
 - View all available extracurricular activities
 - Sign up for activities
+- Role-based access for organizers, approval committee members, and admins
 
 ## Getting Started
 
@@ -31,6 +32,19 @@ A super simple FastAPI application that allows students to view and sign up for 
 | ------ | ----------------------------------------------------------------- | ------------------------------------------------------------------- |
 | GET    | `/activities`                                                     | Get all activities with their details and current participant count |
 | POST   | `/activities/{activity_name}/signup?email=student@mergington.edu` | Sign up for an activity                                             |
+| DELETE | `/activities/{activity_name}/unregister?email=student@mergington.edu` | Unregister a student from an activity                               |
+| POST   | `/activities/{activity_name}/review?comment=Looks%20good`         | Record an approval committee review                                 |
+| POST   | `/activities/{activity_name}/capacity?max_participants=25`        | Update activity capacity as an admin                                 |
+
+## Roles
+
+The app uses a simple header-based role check with `X-User-Role`.
+
+- `organizer` can sign up and unregister students
+- `approval_committee` can leave review notes
+- `admin` can update activity capacity
+
+Requests without a valid role return `403 Forbidden`.
 
 ## Data Model
 
